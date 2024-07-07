@@ -1,4 +1,4 @@
-// ✏️ assets/JS/Controller/editController.js
+// assets/JS/Controller/editController.js
 
 var App = App || {};
 

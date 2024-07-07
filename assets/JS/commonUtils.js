@@ -1,4 +1,4 @@
-// 🧩 assets/JS/commonUtils.js
+// assets/JS/commonUtils.js
 
 var App = App || {};
 

@@ -1,4 +1,4 @@
-// 🌲 assets/JS/View/treeView.js
+// assets/JS/View/treeView.js
 
 var App = App || {};
 

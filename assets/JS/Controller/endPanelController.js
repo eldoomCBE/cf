@@ -1,4 +1,4 @@
-// 🔴 assets/JS/Controller/endPanelController.js
+// assets/JS/Controller/endPanelController.js
 
 var App = App || {};
 

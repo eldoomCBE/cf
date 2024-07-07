@@ -1,4 +1,4 @@
-// 🌳 assets/JS/Model/treeModel.js
+// assets/JS/Model/treeModel.js
 
 var App = App || {};
 

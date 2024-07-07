@@ -1,4 +1,4 @@
-// 📊 assets/JS/View/statisticsView.js
+// assets/JS/View/statisticsView.js
 
 var App = App || {};
 

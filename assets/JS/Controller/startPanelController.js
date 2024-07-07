@@ -1,4 +1,4 @@
-// 🔵 assets/JS/Controller/startPanelController.js
+// assets/JS/Controller/startPanelController.js
 
 var App = App || {};
 

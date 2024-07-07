@@ -1,4 +1,4 @@
-// 📄 assets/JS/Model/csvParser.js
+// assets/JS/Model/csvParser.js
 
 var App = App || {};
 

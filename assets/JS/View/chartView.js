@@ -1,4 +1,4 @@
-// 📈 assets/JS/View/chartView.js
+// assets/JS/View/chartView.js
 
 var App = App || {};
 

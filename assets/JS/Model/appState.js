@@ -1,4 +1,4 @@
-// 📝 assets/JS/Model/appState.js
+// assets/JS/Model/appState.js
 
 var App = App || {};
 

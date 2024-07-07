@@ -1,4 +1,4 @@
-// ☁️ assets/JS/View/tagcloudView.js
+// assets/JS/View/tagcloudView.js
 
 var App = App || {};
 
