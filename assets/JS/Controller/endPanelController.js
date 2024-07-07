@@ -35,7 +35,7 @@ $(document).ready(function() {
 });
 
 App.details = (function() {
-    function showDetails(nodes) {
+    function showEditDetails(nodes) {
         if (!nodes || nodes.length === 0) {
             $('#details').hide();
             return;
@@ -84,7 +84,7 @@ App.details = (function() {
     }
 
     return {
-        showDetails: showDetails,
+        showEditDetails: showEditDetails,
         selectNode: selectNode
     };
 })();

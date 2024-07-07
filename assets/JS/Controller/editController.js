@@ -14,6 +14,7 @@ App.editController = (function() {
         if (editSwitch) {
             editSwitch.addEventListener('change', function(event) {
                 const isEditMode = event.target.checked;
+                console.log(`Edit switch changed: ${isEditMode}`); // Debugging log
                 App.state.setEditMode(isEditMode);
                 toggleEditMode(isEditMode);
                 App.details.showDetails(App.state.appState.currentNode);
@@ -21,39 +22,55 @@ App.editController = (function() {
         }
     }
 
-    function toggleEditMode(isEditMode) {
+    function toggleEditMode(isEditMode = false) {
+        console.log(`Toggling edit mode: ${isEditMode}`);
         const editableFields = document.querySelectorAll('.editable');
         editableFields.forEach(field => {
+            console.log(`Before toggle - Field readOnly: ${field.readOnly}`);
             if (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') {
                 field.readOnly = !isEditMode;
                 field.classList.toggle('editing', isEditMode);
             } else {
-                field.contentEditable = isEditMode;
+                field.contentEditable = isEditMode.toString();
                 field.classList.toggle('editing', isEditMode);
             }
+            console.log(`After toggle - Field readOnly: ${field.readOnly}`);
         });
         if (isEditMode) {
             attachEventListeners();
         }
     }
-
+    
     function attachEventListeners() {
         const editableFields = document.querySelectorAll('.editable');
         editableFields.forEach(field => {
             field.removeEventListener('input', handleFieldEdit);
             field.addEventListener('input', handleFieldEdit);
         });
-    }
+    }    
 
     function handleFieldEdit(event) {
         const field = event.target;
         const id = field.getAttribute('data-id');
-        const value = field.value || field.innerText; // Support for both input and div elements
+        let value = field.value || field.innerText; // Support for both input and div elements
         const [nodeId, ...fieldKeyArr] = id.split('_');
         const fieldKey = fieldKeyArr.join('_');
         const nodeData = App.state.appState.data.find(node => node['ID number'] === nodeId);
-
+    
         if (nodeData) {
+            // Check if the field is supposed to contain JSON data
+            if (fieldKey === 'Scale configuration' || fieldKey === 'Rule config') {
+                try {
+                    // Attempt to parse the current value as JSON to check if it's valid JSON
+                    JSON.parse(value);
+                    // If it's valid JSON and an object, stringify it
+                    value = JSON.stringify(value);
+                } catch (e) {
+                    // If it's not valid JSON, handle the exception or leave the value as is
+                    console.error('Error parsing JSON for field:', fieldKey, e);
+                }
+            }
+    
             nodeData[fieldKey] = value;
             dataModified = true;
             if (dataModified) {
@@ -61,6 +78,7 @@ App.editController = (function() {
                 showAutoSaveIndicator();
                 App.tree.updateTreeTitles(); // Update the tree with the new titles
                 App.details.showDetails(App.state.appState.currentNode); // Refresh details view
+                console.log(`Field edited: ${event.target.name}, New Value: ${event.target.value}`);
             }
         }
     }
@@ -76,7 +94,7 @@ App.editController = (function() {
     function refreshEditBindings() {
         const isEditMode = App.state.getEditMode();
         toggleEditMode(isEditMode);
-    }
+    }    
 
     function exportData() {
         const data = App.state.appState.data;
