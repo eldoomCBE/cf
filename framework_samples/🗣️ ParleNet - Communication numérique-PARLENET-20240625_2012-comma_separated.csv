@@ -1,0 +1,323 @@
+"Parent ID number","ID number","Short name",Description,"Description format","Scale values","Scale configuration","Rule type (optional)","Rule outcome (optional)","Rule config (optional)","Cross-referenced competency ID numbers","Exported ID (optional)","Is framework",Taxonomy
+,PARLENET,"🗣️ ParleNet - Communication numérique","<div class=""container"">
+    <div class=""row"">
+        <div class=""col-md-12"">
+            <div class=""jumbotron"">
+                <h1 class=""text-center"">Adopter une communication numérique saine</h1>
+            </div>
+        </div>
+    </div>
+    <div class=""row"">
+        <div class=""col-md-4"">
+            <div class=""card"">
+                <div class=""card-body"">
+                    <h4 class=""text-left card-title"">▶️ La compétence, ce savoir-agir complexe...</h4>
+                    <hr />
+                    <div class=""alert alert-warning"">
+                        <p><strong>☑️ Critères d'exigence</strong></p>
+                        <ol class=""list-group list-group-flush"">
+                            <li class=""list-group-item list-group-item-warning list-group-item-action"">En <strong>adoptant </strong>un comportement réfléchi</li>
+                            <li class=""list-group-item list-group-item-warning list-group-item-action"">En <strong>adaptant </strong>l’outil et le contenu au contexte</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=""col-md-4"">
+            <div class=""card"">
+                <div class=""card-body"">
+                    <h4 class=""text-left card-title"">⤴️ 3 axes de développement...</h4>
+                    <hr />
+                    <div class=""alert alert-info"">
+                        <p><strong>⭐ Niveaux</strong></p>
+                        <ol class=""list-group list-group-flush"">
+                            <li class=""list-group-item list-group-item-info list-group-item-action""><strong>Identifier </strong>les éléments d’une communication saine</li>
+                            <li class=""list-group-item list-group-item-info list-group-item-action""><strong>Appliquer </strong>les règles de base d’une communication numérique saine</li>
+                            <li class=""list-group-item list-group-item-info list-group-item-action""><strong>Prendre du recul</strong> sur sa démarche et l’ajuster</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=""col-md-4"">
+            <div class=""card"">
+                <div class=""card-body"">
+                    <h4 class=""text-left card-title"">🔀 À visée transversale et inspiré de cas pratiques...</h4>
+                    <hr />
+                    <div class=""alert alert-success"">
+                        <p><strong>📚 Domaine de ressources</strong></p>
+                        <ul class=""list-group list-group-flush"">
+                            <li class=""list-group-item list-group-item-success list-group-item-action"">Sciences de la santé</li>
+                            <li class=""list-group-item list-group-item-success list-group-item-action"">Droit économie gestion</li>
+                            <li class=""list-group-item list-group-item-success list-group-item-action"">Arts, Lettres et Langues</li>
+                            <li class=""list-group-item list-group-item-success list-group-item-action"">Sciences humaines et sociales</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>",1,"Novice,Intermédiaire,Compétent,Avancé","[{""scaleid"":""16""},{""id"":1,""scaledefault"":1,""proficient"":0},{""id"":3,""scaledefault"":0,""proficient"":1}]",,,,,,1,"competency,level,practice,outcome"
+PARLENET-C1-N2-AC2," PARLENET-C1-N2-AC2-OP3","🎯 Identifier les objectifs et spécificités de chaque canal de communication ","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,723,,
+,PARLENET-C1,"✊ Adopter une communication numérique saine","<img src=""https://dummyimage.com/800x200/cfcfcf/6e6e6e.png"" alt="""" class=""img-fluid atto_image_button_text-bottom"" />
+<div class=""container"">
+    <div class=""row"">
+        <div class=""col-md-12"">
+            <div class=""alert alert-warning"">
+                <h1>☑️ Critères d'exigence</h1>
+                <ol class=""list-group list-group-flush"">
+                    <li class=""list-group-item list-group-item-warning list-group-item-action"">En <strong>adoptant </strong>un comportement réfléchi</li>
+                    <li class=""list-group-item list-group-item-warning list-group-item-action"">En <strong>adaptant </strong>l’outil et le contenu au contexte</li>
+                </ol>
+            </div>
+            <div class=""alert alert-danger"">
+                <h1>💼 Situations professionnelles</h1>
+                <ol class=""list-group list-group-flush"">
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Transmettre </strong>au bon interlocuteur, la juste information, dans la forme adaptée</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Limiter </strong>la perte de temps et la surcharge informationnelle</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Réduire </strong>le stress et la pression</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Améliorer </strong>le travail collaboratif</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Tempérer </strong>le déclenchement ou l’escalade du conflit</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Restaurer </strong>les rapports humains, l’isolement et la dépersonnalisation échanges</li>
+                    <li class=""list-group-item list-group-item-danger list-group-item-action""><strong>Réduire </strong>sa dépendance au média</li>
+                </ol>
+            </div>
+            <div class=""alert alert-success"">
+                <h1>📚 Domaine de ressources</h1>
+                <ul class=""list-group list-group-flush"">
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">Médecine</li>
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">Pharmacie</li>
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">Marketing (IMPGT)</li>
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">ALLSH</li>
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">FSS</li>
+                    <li class=""list-group-item list-group-item-success list-group-item-action"">FEG</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>",1,,,,0,null,"PARLENET-C1-N1,PARLENET-C1-N2,PARLENET-C1-N3",696,,
+PARLENET-C1,PARLENET-C1-N1,"⭐ Se familiariser avec des éléments d’une communication numérique saine",,1,,,,0,null,"PARLENET-C1,PARLENET-C1-N1-AC1,PARLENET-C1-N1-AC2,PARLENET-C1-N1-AC3",697,,
+PARLENET-C1-N1,PARLENET-C1-N1-AC1,"🔨 Identifier les éléments et codes essentiels dans une communication numérique","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N1,700,,
+PARLENET-C1-N1-AC1,PARLENET-C1-N1-AC1-OP1,"🎯 Identifier les grandes règles de la communication numérique ","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text"">Au travers de la méthode es <strong>7C</strong> de la Communication : <strong>C</strong>larté, <strong>C</strong>oncision, <strong>C</strong>oncret, <strong>C</strong>orrection, <strong>C</strong>ohérence, <strong>C</strong>omplet, <strong>C</strong>ourtoisie</p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,707,,
+PARLENET-C1-N1-AC1,PARLENET-C1-N1-AC1-OP2,"🎯 Identifier les grandes règles de communication spécifiques à l'envoi de mails","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text"">Objet clair et concis, attention au choix du destinataire, ne pas écrire un mail sous le coup de l'émotion, formules de politesse...</p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,708,,
+PARLENET-C1-N1,PARLENET-C1-N1-AC2,"🔨 Identifier les éléments constitutifs d’une information en vue d’en estimer sa qualité","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N1,701,,
+PARLENET-C1-N1-AC2,PARLENET-C1-N1-AC2-OP1,"🎯 Identifier et délimiter ce qui est un fait, une interprétation ou un avis.","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,712,,
+PARLENET-C1-N1-AC2,PARLENET-C1-N1-AC2-OP2,"🎯 Définir qui est à l’origine de l’information et quelles sont ses intentions","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,713,,
+PARLENET-C1-N1-AC2,PARLENET-C1-N1-AC2-OP3,"🎯 Identifier la temporalité de l'information (information récente ou ancienne)","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,714,,
+PARLENET-C1-N1,PARLENET-C1-N1-AC3,"🔨 Reconnaître le potentiel conflictuel de certains aspects de la communication numérique","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N1,702,,
+PARLENET-C1-N1-AC3,PARLENET-C1-N1-AC3-OP1,"🎯 Identifier et estimer les sujets clivant dans une communication","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,715,,
+PARLENET-C1-N1-AC3,PARLENET-C1-N1-AC3-OP2,"🎯 Repérer et contextualiser les différents rapports de forces","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,716,,
+PARLENET-C1-N1-AC3,PARLENET-C1-N1-AC3-OP3,"🎯  Identifier les propos dangereux et passibles de blame ou de peines lourdes","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,717,,
+PARLENET-C1,PARLENET-C1-N2,"⭐⭐ Appliquer les règles de base d’une communication numérique saine",,1,,,,0,null,"PARLENET-C1,PARLENET-C1-N2-AC1,PARLENET-C1-N2-AC2",698,,
+PARLENET-C1-N2,PARLENET-C1-N2-AC1,"🔨 Choisir et appliquer consciemment et de manière réfléchie les éléments et codes essentiels","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N2,703,,
+PARLENET-C1-N2-AC1,PARLENET-C1-N2-AC1-OP1,"🎯 Choisir l’interlocuteur principal et éventuellement secondaire du message selon son besoin","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,718,,
+PARLENET-C1-N2-AC1,PARLENET-C1-N2-AC1-OP2,"🎯 Choisir le message à véhiculer","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,719,,
+PARLENET-C1-N2-AC1,PARLENET-C1-N2-AC1-OP3,"🎯 Choisir le registre langagier du message selon son besoin","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,720,,
+PARLENET-C1-N2,PARLENET-C1-N2-AC2,"🔨 Rechercher des informations et vérifier leur fiabilité en faisant des recoupements","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg""><p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N2,704,,
+PARLENET-C1-N2-AC2,PARLENET-C1-N2-AC2-OP1,"🎯 Rechercher des informations manquantes selon le bon canal d'information et de communication","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,721,,
+PARLENET-C1-N2-AC2,PARLENET-C1-N2-AC2-OP2,"🎯 Comparer les informations entre elles, établir des liens et faire des déductions","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,722,,
+PARLENET-C1-N2,PARLENET-C1-N2-AC3,"🔨 Employer des stratégies de désescalade face à une situation de communication conflictuelle","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,710,,
+PARLENET-C1-N2-AC3,PARLENET-C1-N2-AC3-OP1,"🎯 Appliquer une communication neutre en évitant les sujets clivant et sources de conflits","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,724,,
+PARLENET-C1-N2-AC3,PARLENET-C1-N2-AC3-OP2,"🎯 Détecter les rapports de forces et choisir une communication affirmée mais bienveillante","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,725,,
+PARLENET-C1-N2-AC3,PARLENET-C1-N2-AC3-OP3,"🎯 Respecter la vie privée et l'intégrité des personnes lors du partage d'informations","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,726,,
+PARLENET-C1-N2-AC3,PARLENET-C1-N2-AC3-OP4,"🎯 Choisir le canal de communication le plus adapté en cas de situation conflictuelle ","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,727,,
+PARLENET-C1,PARLENET-C1-N3,"⭐⭐⭐ Prendre du recul sur sa démarche et l’ajuster",,1,,,,0,null,"PARLENET-C1,PARLENET-C1-N3-AC1,PARLENET-C1-N3-AC2",699,,
+PARLENET-C1-N3,PARLENET-C1-N3-AC1,"🔨 Adapter sa communication à son interlocuteur selon la situation","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N3,705,,
+PARLENET-C1-N3-AC1,PARLENET-C1-N3-AC1-OP1,"🎯 Adapter la longueur de son message à l'interlocuteur, à l'urgence et au contenu à faire passer","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,728,,
+PARLENET-C1-N3-AC1,PARLENET-C1-N3-AC1-OP2,"🎯 Prendre en compte la disponibilité de son interlocuteur et s'adapter","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,729,,
+PARLENET-C1-N3-AC1,PARLENET-C1-N3-AC1-OP3,"🎯 Faire preuve d'empathie et respecter la temporalité et le droit à la déconnexion de chacun","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,730,,
+PARLENET-C1-N3,PARLENET-C1-N3-AC2,"🔨 Classer et prioriser les outils de communication adaptés selon différentes situations","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,PARLENET-C1-N3,706,,
+PARLENET-C1-N3-AC2,PARLENET-C1-N3-AC2-OP1,"🎯 Classer et prioriser les canaux d'informations selon ses besoins","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,731,,
+PARLENET-C1-N3-AC2,PARLENET-C1-N3-AC2-OP2,"🎯 Choisir le bon canal de diffusion selon son besoin","<div class=""container"">
+    <div class=""card border-danger text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,732,,
+PARLENET-C1-N3,PARLENET-C1-N3-AC3,"🔨 Anticiper les situations de communication potentiellement conflictuelles et adapter sa stratégie","<div class=""container"">
+    <div class=""card border-warning text-center"">
+        <div class=""card-body shadow-lg"">
+            <p class=""card-text""><br /></p>
+        </div>
+    </div>
+</div>",1,,,,0,null,,711,,

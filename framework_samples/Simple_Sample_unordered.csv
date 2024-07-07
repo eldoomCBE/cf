@@ -1,0 +1,6 @@
+"Parent ID number","ID number","Short name",Description,"Description format","Scale values","Scale configuration","Rule type (optional)","Rule outcome (optional)","Rule config (optional)","Cross-referenced competency ID numbers","Exported ID (optional)","Is framework",Taxonomy
+1,1.1,"Value One",,1,,,,0,null,,693,,
+1.1,1.1.1,"Concept One",,1,,,,0,null,,694,,
+1.1.1,1.1.1.1,"Outcome One",,1,,,,0,null,,695,,
+,1,"Domain One",,1,,,,0,null,,692,,
+,SS01234ul,"Simple Sample 3410ul","<p dir=""ltr"" style=""text-align:left;"">Simple sample with one Domain, one Value, one Concept and one Outcome, ordered et numbered.</p>",1,"Not yet competent,Competent","[{""scaleid"":""2""},{""id"":1,""scaledefault"":1,""proficient"":0},{""id"":2,""scaledefault"":0,""proficient"":1}]",,,,,,1,"domain,value,concept,outcome"

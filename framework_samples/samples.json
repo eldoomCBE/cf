@@ -1,0 +1,62 @@
+[
+    {
+        "name": "201-385_Referentiel_C2i2e_Version_2011_C2i2e_2011_comma_separated",
+        "path": "framework_samples/2011-385_Referentiel_C2i2e_Version_2011_C2i2e_2011_comma_separated.csv",
+        "message": "✅ Sample loaded: 2011-385_Referentiel_C2i2e_Version_2011",
+        "category": "📂 REAL FRAMEWORKS"
+    },
+    {
+        "name": "2016-206_CEFR_for_STEM_2016_20211102_1352_comma_separated",
+        "path": "framework_samples/2016-206_CEFR_for_STEM_2016_20211102_1352_comma_separated.csv",
+        "message": "Sample loaded: 2016-206_CEFR_for_STEM_2016",
+        "category": "📂 REAL FRAMEWORKS"
+    },
+    {
+        "name": "2018-429_ISTE_Standards_for_Educators_ISTE_Educators_2018_20180906_1342_comma_separated",
+        "path": "framework_samples/2018-429_ISTE_Standards_for_Educators_ISTE_Educators_2018_20180906_1342_comma_separated.csv",
+        "message": "Sample loaded: 2018-429_ISTE_Standards_for_Educators",
+        "category": "📂 REAL FRAMEWORKS"
+    },
+    {
+        "name": "2021-Master MEEF - PIF - NEO - INSPÉ-NEO-PIF-20240531_1846-comma_separated",
+        "path": "framework_samples/2021-Master MEEF - PIF - NEO - INSPÉ-NEO-PIF-20240531_1846-comma_separated.csv",
+        "message": "Sample loaded: 2021-Master MEEF - PIF",
+        "category": "📂 REAL FRAMEWORKS"
+    },
+    {
+        "name": "2023-774_DigCompLMSAdmin_1979_20230214_0934_comma_separated",
+        "path": "framework_samples/2023-774_DigCompLMSAdmin_1979_20230214_0934_comma_separated.csv",
+        "message": "Sample loaded: 2023-774_DigCompLMSAdmin",
+        "category": "📂 REAL FRAMEWORKS"
+    },
+    {
+        "name": "2024_ Simple sample template",
+        "path": "framework_samples/2024_Sample_template.csv",
+        "message": "Sample loaded: 2024 Simple sample template",
+        "category": "🧫 TESTING FILES"
+    },
+    {
+        "name": "🧮 Example of a name of a Competency framework",
+        "path": "framework_samples/🧮 Example of a name of a Competency framework-ID-NUMBER-EXAMPLE-🧮.csv",
+        "message": "Sample loaded: 🧮 Example of a name of a Competency framework-ID-NUMBER-EXAMPLE-🧮.csv",
+        "category": "🧫 TESTING FILES"
+    },
+    {
+        "name": "Example of a name of a Competency framework",
+        "path": "framework_samples/Example of a name of a Competency framework-ID-NUMBER-EXAMPLE-X.csv",
+        "message": "Sample loaded: Example",
+        "category": "🧫 TESTING FILES"
+    },
+    {
+        "name": "🔵 Simple_Sample_ordered",
+        "path": "framework_samples/Simple_Sample_ordered.csv",
+        "message": "A simple sample where items are ordered inside the CSV",
+        "category": "🧫 TESTING FILES"
+    },
+    {
+        "name": "🔴 Simple_Sample_unordered",
+        "path": "framework_samples/Simple_Sample_unordered.csv",
+        "message": "A simple sample where items are unordered inside the CSV",
+        "category": "🧫 TESTING FILES"
+    }
+]
