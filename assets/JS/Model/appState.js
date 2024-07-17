@@ -14,7 +14,8 @@ App.state = (function() {
         treeCount: 0,
         fileName: '',
         selectedIDs: [],
-        isEditMode: false
+        isEditMode: false,
+        idMapping: {}  
     };
 
     function updateTaxonomyLevels() {
@@ -60,7 +61,15 @@ App.state = (function() {
     }
 
     function sanitizeID(id) {
-        return id.replace(/[^a-zA-Z0-9-]/g, '-');
+        const utf8Encoder = new TextEncoder();
+        const utf8Bytes = utf8Encoder.encode(id);
+        const base64String = btoa(String.fromCharCode.apply(null, utf8Bytes));
+        appState.idMapping[base64String] = id;
+        return base64String;
+    }
+
+    function getOriginalID(sanitizedID) {
+        return appState.idMapping[sanitizedID] || sanitizedID;
     }
 
     function toggleStatistics() {
@@ -86,7 +95,7 @@ App.state = (function() {
     }
 
     function updateURL() {
-        const mode = appState.isStatisticsActive ? 'stats' : 'preview';
+        const mode = appState.isEditMode ? 'edit' : (appState.isStatisticsActive ? 'stats' : 'preview');
         App.utilities.updateURL(mode, appState.fileName, appState.selectedIDs);
     }
 
@@ -125,6 +134,7 @@ App.state = (function() {
         updateTaxonomyLevels,
         getTaxonomyLevel,
         sanitizeID,
+        getOriginalID,
         toggleStatistics,
         updateUI,
         resetUI,
@@ -137,4 +147,3 @@ App.state = (function() {
         getEditMode
     };
 })();
-

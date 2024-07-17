@@ -2,14 +2,44 @@
 
 var App = App || {};
 
+// Monkey patching to add passive event listeners by default
+(function() {
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
+
+    const passiveEvents = ['scroll', 'touchstart', 'touchmove', 'wheel'];
+
+    EventTarget.prototype.addEventListener = function(type, listener, options) {
+        if (typeof options === 'boolean') {
+            options = { capture: options };
+        }
+        if (!options || typeof options !== 'object') {
+            options = {};
+        }
+        if (passiveEvents.includes(type)) {
+            options.passive = true;
+        }
+        originalAddEventListener.call(this, type, listener, options);
+    };
+})();
+
+// Sidebars
+
 window.addEventListener('DOMContentLoaded', event => {
-    // Toggle the side navigation
-    const sidebarToggle = document.body.querySelector('#sidebarToggle');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', event => {
+    // Toggle the left side navigation
+    const leftsidebarToggle = document.body.querySelector('#left-sidebarToggle');
+    if (leftsidebarToggle) {
+        leftsidebarToggle.addEventListener('click', event => {
             event.preventDefault();
-            document.body.classList.toggle('sb-sidenav-toggled');
-            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+            document.body.classList.toggle('sb-left-sidenav-toggled');
+        });
+    }
+
+    // Toggle the right side navigation
+    const rightsidebarToggle = document.body.querySelector('#right-sidebarToggle');
+    if (rightsidebarToggle) {
+        rightsidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-right-sidenav-toggled');
         });
     }
 });
@@ -17,7 +47,7 @@ window.addEventListener('DOMContentLoaded', event => {
 // URLs configuration
 
 App.utilities = (function () {
-function encodeParams(params, separator) {
+    function encodeParams(params, separator) {
         return params.map(param => encodeURIComponent(param)).join(separator);
     }
 
@@ -26,16 +56,12 @@ function encodeParams(params, separator) {
     }
 
     function updateURL(mode, fileName, selectedIDs = []) {
-        if (!fileName) {
-            console.error('fileName is undefined in updateURL');
-            return;
-        }
-
-        const modeSuffix = mode ? `&mode=${mode}` : '';
+        const modeSuffix = mode ? `mode=${mode}` : '';
+        const fileSuffix = fileName ? `&file=${fileName}` : '';
         const encodedSelectedIDs = encodeParams(selectedIDs, '➕');
         const selectedIDsSuffix = selectedIDs.length ? `&ids=${encodedSelectedIDs}` : '';
 
-        let newURL = `#file=${fileName}${modeSuffix}${selectedIDsSuffix}`; // Use fileName directly
+        let newURL = `#${modeSuffix}${fileSuffix}${selectedIDsSuffix}`;
         window.history.replaceState({}, '', window.location.origin + window.location.pathname + newURL);
     }
 
@@ -43,22 +69,24 @@ function encodeParams(params, separator) {
         document.title = fileName ? `${fileName} | mcf` : 'Moodle Competency Framework';
     }
 
+    function getURLParams() {
+        let hash = window.location.hash ? window.location.hash.substring(1) : null;
+        if (!hash) return {};
+
+        const params = new URLSearchParams(hash);
+        const mode = params.get('mode') || 'preview';
+        const fileName = params.get('file');
+        const ids = params.get('ids') ? decodeParams(params.get('ids'), '➕') : [];
+
+        return { mode, fileName, selectedIDs: ids };
+    }
+
     return {
         encodeParams,
         decodeParams,
         updateURL,
         updatePageTitle,
-        getURLParams: function () {
-            let hash = window.location.hash ? window.location.hash.substring(1) : null;
-            if (!hash) return {};
-
-            const params = new URLSearchParams(hash);
-            const fileName = params.get('file');
-            const mode = params.get('mode') || 'preview';
-            const ids = params.get('ids') ? decodeParams(params.get('ids'), '➕') : [];
-
-            return { fileName, mode, selectedIDs: ids };
-        },
+        getURLParams
     };
 })();
 
@@ -80,8 +108,21 @@ App.utils = (function() {
         };
     }
 
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const context = this, args = arguments;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+
     return {
-        debounce: debounce
+        debounce: debounce,
+        throttle: throttle
     };
 })();
 
@@ -110,7 +151,7 @@ App.alerts = (function() {
         setTimeout(() => {
             $(`.alert:contains("${message}")`).alert('close');
             displayedAlerts.delete(alertId);
-        }, 1000);
+        }, 5000);
     }
 
     function initializeTooltips() {
@@ -146,6 +187,16 @@ $(document).ready(function () {
             $(document).off(".slider");
         });
     });
+            
+    // Toggle left sidebar
+    $('#hamburger-icon, #left-sidebarToggle').on('click', function() {
+        $('body').toggleClass('sb-left-sidenav-toggled');
+        $('#hamburger-icon').toggleClass('collapsed');
+        $('#left-sidebarToggle').toggleClass('collapsed'); // Toggle animation
+    });
+
+    // Toggle sub-nav
+    $('#editSwitch').on('change', function() {
+        $('#sub-nav').collapse('toggle');
+    });
 });
-
-

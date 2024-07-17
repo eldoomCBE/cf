@@ -163,12 +163,25 @@ function populateSampleFilesDropdown(sampleFiles) {
     });
 }
 
+function isValidFrameworkInput(text) {
+    try {
+        const data = JSON.parse(text);
+        // Perform additional validation if needed
+        return Array.isArray(data) && data.every(item => item.hasOwnProperty('ID number') && item.hasOwnProperty('Short name'));
+    } catch (error) {
+        return false;
+    }
+}
+
     return {
         parseCSV: parseCSV,
         fetchAndParseCSV: fetchAndParseCSV,
         handleFileParsingComplete: handleFileParsingComplete,
         showLoadingEffects: showLoadingEffects,
         hideLoadingEffects: hideLoadingEffects,
-        populateSampleFilesDropdown: populateSampleFilesDropdown
+        populateSampleFilesDropdown: populateSampleFilesDropdown,
+        isValidFrameworkInput: isValidFrameworkInput,
+        createNodeMap: createNodeMap,
+        createFrameworkUI: createFrameworkUI
     };
 })();
