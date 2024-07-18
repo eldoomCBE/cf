@@ -73,9 +73,20 @@ App.editController = (function() {
             skin_url: 'assets/JS/tinymce/skins/ui/mcf',
             content_css: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css",
             selector: 'textarea.editable[data-id$="_Description"]',
-            height: 300,
-            plugins: 'link image code searchreplace quickbars preview media fullscreen emoticons',
-            toolbar: 'searchreplace | undo redo | emoticons media | formatselect | bold italic | alignleft aligncenter alignright | fullscreen preview code',
+            height: 606,
+            plugins: 'link image supercode searchreplace quickbars preview media fullscreen emoticons charmap accordion anchor autoresize autosave insertdatetime lists advlist table visualblocks',
+            toolbar: 'supercode | undo redo | styles | bold italic underline strikethrough blockquote removeformat | fontfamily fontsize forecolor backcolor casechange | formatselect alignleft aligncenter alignright alignjustify lineheight | numlist bullist checklist | indent outdent | table | hr anchor accordion | emoticons charmap insertdatetime | image media link | searchreplace | wordcount | selectall visualblocks fullscreen preview |',
+            toolbar_mode: 'floating',
+            supercode: {
+                theme: 'chaos',
+                fontSize: 14,
+                wrap: true,
+                autocomplete: true,
+                iconName: 'sourcecode',
+                language: 'html',
+                shortcut: true,
+                fontFamily: 'Monospace',
+              },
             setup: function(editor) {
                 editor.on('init', () => {
                     editor.getContainer().style.transition='border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out';

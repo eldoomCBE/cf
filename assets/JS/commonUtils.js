@@ -3,24 +3,24 @@
 var App = App || {};
 
 // Monkey patching to add passive event listeners by default
-(function() {
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
+// (function() {
+//     const originalAddEventListener = EventTarget.prototype.addEventListener;
 
-    const passiveEvents = ['scroll', 'touchstart', 'touchmove', 'wheel'];
+//     const passiveEvents = ['scroll', 'touchstart', 'touchmove', 'wheel'];
 
-    EventTarget.prototype.addEventListener = function(type, listener, options) {
-        if (typeof options === 'boolean') {
-            options = { capture: options };
-        }
-        if (!options || typeof options !== 'object') {
-            options = {};
-        }
-        if (passiveEvents.includes(type)) {
-            options.passive = true;
-        }
-        originalAddEventListener.call(this, type, listener, options);
-    };
-})();
+//     EventTarget.prototype.addEventListener = function(type, listener, options) {
+//         if (typeof options === 'boolean') {
+//             options = { capture: options };
+//         }
+//         if (!options || typeof options !== 'object') {
+//             options = {};
+//         }
+//         if (passiveEvents.includes(type)) {
+//             options.passive = true;
+//         }
+//         originalAddEventListener.call(this, type, listener, options);
+//     };
+// })();
 
 // Sidebars
 
