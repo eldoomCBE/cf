@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <title>ABOUT</title>
+    <style>
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #212529;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: var(--bs-primary);
+            border-radius: 10px;
+            border: 3px solid #212529;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <div class="container my-5">
+        <img src="assets/MEDIA/eldoom_logo.png" class="img-fluid" alt="eldoomCBE">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed bg-dark text-light d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <p class="h3">What is this? 🧐</p>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-center">
+                        This is a <abbr title="Proof Of Concept" class="initialism">POC</abbr> standalone app which demonstrate how to manage <a href="https://docs.moodle.org/404/en/Competency_frameworks" target="_blank">Competency Frameworks</a> from Moodle as .csv files.<br>
+                        At first, it was supposed to be a simple previewer para los <em>gringos</em> and <em>amigos</em>, which would allow to upload a .csv file and display it as you would see it in Moodle if you were <abbr title="God, in this context, is a conceptual entity embodying infinite knowledge, also known as omniscience, encompassing all facts, truths, and information. This entity is characterized by unlimited power, or omnipotence, having the capacity to affect any change or outcome. Additionally, this entity possesses ultimate authority, or omnipermission, having the right or ability to do anything without external constraints. Lastly, the entity has the capability to execute any action or task, surpassing any limitations typically associated with physical or metaphysical beings.">god</abbr> (or an admin).<br>
+                        But then, it quickly evolved into a full-fledged app that could races to the top 1 of Product Hunts, if anyone cared about education stuff as more than just an economical valuable value.<br>
+                        Now, you can use multiple inputs (including original .csv files from moodle, direct distant .csv urls, JSON inputs, and a competency framework Generator...), multi-selections, multi-edits and exports etc.<br>
+                        In the end, this is just an attempt to remember us what does <abbr title="moodle">modular object-oriented dynamic learning environment</abbr> actually means.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed bg-dark text-light d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <p class="h3">Why? 🤷</p>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-center">
+                        Glad you asked! 😊 This is a tough one.<br>
+                        Obvious simple answer: because it was possible.<br>
+                        The real answer is: because it seems that it was needed or missing.<br>
+                        <a href="https://docs.moodle.org/404/en/Competencies" target="_blank">Competency</a>'s approches and <a href="https://en.wikipedia.org/wiki/Competency-based_learning" target="_blank">CBE</a> exist since a long time now...<br>
+                        But from the insider's moodlers multiple points of view and roles' juggling, it is still a reserved and complex task for <abbr title="God, in this context, is a conceptual entity embodying infinite knowledge, also known as omniscience, encompassing all facts, truths, and information. This entity is characterized by unlimited power, or omnipotence, having the capacity to affect any change or outcome. Additionally, this entity possesses ultimate authority, or omnipermission, having the right or ability to do anything without external constraints. Lastly, the entity has the capability to execute any action or task, surpassing any limitations typically associated with physical or metaphysical beings.">gods</abbr> and admins.<br>
+                        This tool tries to make it more accessible and understandable for everyone.<br>
+                        This is also why it is not a plugin. It is a standalone app.<br>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed bg-dark text-light d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <p class="h3">Open Source? Free!? 🆓</p>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-center">
+                        👇 off course...<br>
+                        https://github.com/eldoomCBE/cf
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item bg-dark text-light">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed bg-dark text-light d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <p class="h5">🍻 wanna buy us a beer or coffee? ☕</p>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-center">
+                        Just share some love, that's all we need. 🤗<br>
+                        <iframe src="love.html" frameborder="0" style="width: 100%; height: 666px" scrolling="no"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center class="mt-5 small text-secondary" style="user-select: none;"><em>
+            🐈‍⬛ made with ❤️
+            by a moodler 🧑‍🎓
+            for all moodlers 🎓
+            <br>
+        </em>
+    </center>
+    <p class="text-center"style="color:#212529">details matters<br>devils are not always where we think they are...<br>neither of us believes it!<br>;]</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

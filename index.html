@@ -40,7 +40,7 @@
             </div>
                 <div class="container gap-2 p-3 position-fixed bottom-0">
                     <button class="btn btn-outline-secondary" type="button" id="modalSetings">Settings</button>
-                    <button class="btn btn-outline-secondary" type="button" id="modalAbout">About</button>
+                    <button class="btn btn-outline-secondary" type="button" id="modalAbout" data-bs-toggle="modal" data-bs-target="#aboutModal">About</button>
                 </div>
         </div>
         <!-- Right End Output Sidebar-->
@@ -335,6 +335,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aboutModalLabel">About</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe src="about.html" frameborder="0" style="width: 100%; height: 75vh;"></iframe>
             </div>
         </div>
     </div>

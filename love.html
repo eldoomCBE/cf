@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💗</title>
+    <style>
+
+    :root {
+          --x: -16px;
+          --y: -16px;
+      }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    body,html {
+        background: linear-gradient(145deg,
+          #ff79c6, #fc97ff, #d98bff, #b377ff, #8338ed, #ff9999,
+          #ff6699, #ff4d8d, #e03b8e, #fc97ff, #ff79c6);
+        background-size: 1800% 1800%;
+        -webkit-animation: gradientPTDR 66s ease infinite;
+        -moz-animation: gradientPTDR 66s ease infinite;
+        animation: gradientPTDR 66s ease infinite;
+    }
+
+    .emoji-icon {
+        font-size: 35rem;
+    }
+
+    .emoji-count {
+        position: fixed;
+        z-index: 1;
+        font-weight: 900;
+        font-size: 20rem;
+        font-family: sans-serif;
+    }
+
+    #text {
+      color: #fff9;
+      letter-spacing: 4px;
+      text-shadow:
+      calc(var(--x) * -3) calc(var(--y) * -3) 0px #ff92ee80,
+      calc(var(--x) * -6) calc(var(--y) * -6) 0px #fa6cff80,
+      calc(var(--x) * -9) calc(var(--y) * -9) 0px #d81dc480;
+  }
+
+  .emoji-reaction-container {
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 2px #FFFFFF80, 10px 1px 12px #FFFFFF80,
+    2px 2px 10px #FFFFFF80, 2px 2px 3px #FFFFFF80, inset 2px 2px 10px #FFFFFF80,
+    inset 2px 2px 10px #FFFFFF80, inset 2px 2px 10px #FFFFFF80,
+    inset 2px 2px 10px #FFFFFF80;
+    border-radius: 100%;
+    margin: 0 40px;
+    animation: heartbeat 10s infinite;
+    text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+}
+
+.emoji-reaction-container:before,
+.emoji-reaction-container:after {
+    position: absolute;
+    display: none;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #fff;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -o-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
+.emoji-reaction-container:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    transform-origin :100% 100%;
+}
+
+.emoji-reaction {
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25vw;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5046393557422969) 100%);         
+}
+
+.emoji-reaction:hover .emoji-icon {
+    animation: heartbeat 3s infinite;
+}
+
+.emoji-reaction, .emoji-count {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+}
+20%
+{
+    transform: scale( 1.25 );
+}
+40%
+{
+    transform: scale( .75 );
+}
+60%
+{
+    transform: scale( 1.25 );
+}
+80%
+{
+    transform: scale( .75 );
+}
+100%
+{
+    transform: scale( .75 );
+}
+}
+
+@-webkit-keyframes gradientPTDR {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes gradientPTDR {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+@keyframes gradientPTDR {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+/* Animation CSS pour vibration et glow */
+@keyframes vibrate {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+}
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ff79c6; }
+    50% { box-shadow: 0 0 20px #ff79c6; }
+    100% { box-shadow: 0 0 5px #ff79c6; }
+}
+.vibrate {
+    animation: vibrate 0.2s linear;
+}
+.glow {
+    animation: glow 0.5s ease-in-out;
+}
+</style>
+</head>
+<body>
+
+    <div class="emoji-reaction-container" data-id="💗">
+        <button class="emoji-reaction" data-emoji="💗">
+            <span class="emoji-icon">💗</span>
+            <span id="text" class="emoji-count">0</span>
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script type="text/javascript">
+        const text = document.getElementById('text');
+        const range = 16;
+
+        function updateShadow(event) {
+          const x = Math.round(event.pageX * range / window.innerWidth) - range / 2;
+          const y = Math.round(event.pageY * range / window.innerHeight) - range / 2;
+          gsap.to(text, {
+            '--x': x,
+            '--y': y,
+          });
+        }
+
+        document.body.addEventListener('mousemove', updateShadow);
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        }
+    </script>
+    <script type="text/javascript">
+
+        function animateCount(element, targetCount) {
+            const duration = 1000;
+            let start = null;
+            let currentCount = parseInt(element.innerText) || 0;
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = (timestamp - start) / duration;
+                const delta = easeInOutQuad(progress) * (targetCount - currentCount);
+                const count = currentCount + delta;
+                element.innerText = Math.round(count);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    element.innerText = targetCount;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        function emojisplosion(button) {
+            const emojiSpan = button.querySelector('.emoji-icon');
+            const rect = emojiSpan.getBoundingClientRect();
+            const explosionCount = 50;
+            for (let i = 0; i < explosionCount; i++) {
+                const span = emojiSpan.cloneNode(true);
+                span.style.position = 'fixed';
+                span.style.left = `${rect.left + rect.width / 2}px`;
+                span.style.top = `${rect.top + rect.height / 2}px`;
+                span.style.transition = 'transform 1.5s ease-out, opacity 1.5s';
+                span.style.transformOrigin = 'center';
+                span.style.zIndex = 9999;
+                span.style.fontSize = '10em';
+                const angle = Math.random() * 2 * Math.PI;
+                const distance = 100 + Math.random() * 200;
+                const x = distance * Math.cos(angle);
+                const y = distance * Math.sin(angle);
+                const rotation = Math.random() * 360;
+                document.body.appendChild(span);
+                requestAnimationFrame(() => {
+                    span.style.transform = `translate(${x}px, ${y}px) scale(0) rotate(${rotation}deg)`;
+                    span.style.opacity = '0';
+                });
+                setTimeout(() => {
+                    document.body.removeChild(span);
+                }, 1500);
+            }
+        }
+
+        function loadCounts() {
+            document.querySelectorAll('.emoji-reaction-container').forEach(container => {
+                const id = container.dataset.id;
+                const reactionRef = db.ref('reactions/' + id);
+                reactionRef.on('value', (snapshot) => {
+                    const data = snapshot.val();
+                    if (data) {
+                        container.querySelectorAll('.emoji-reaction').forEach(button => {
+                            const emoji = button.dataset.emoji;
+                            const countSpan = button.querySelector('.emoji-count');
+                            if (data[emoji]) {
+                                const currentCount = parseInt(countSpan.innerText) || 0;
+                                if (currentCount !== data[emoji]) {
+                                    animateCount(countSpan, data[emoji]);
+                                    emojisplosion(button);
+                                }
+                            } else {
+                                countSpan.innerText = '0';
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        function handleButtonClick(button) {
+            button.classList.add('vibrate', 'glow');
+            setTimeout(() => {
+                button.classList.remove('vibrate', 'glow');
+            }, 500);
+        }
+
+                const firebaseConfig = {
+            apiKey: "AIzaSyDD9U4hnfQnzEduCfjTqhJE8xHN98iDY2s",
+            authDomain: "emoji-reactions-1e77e.firebaseapp.com",
+            databaseURL: "https://emoji-reactions-1e77e-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "emoji-reactions-1e77e",
+            storageBucket: "emoji-reactions-1e77e.appspot.com",
+            messagingSenderId: "73302211585",
+            appId: "1:73302211585:web:cbb224bfa5e332ea809400"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        
+
+        document.querySelectorAll('.emoji-reaction').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const emoji = e.target.dataset.emoji || e.target.parentElement.dataset.emoji;
+                const container = e.target.closest('.emoji-reaction-container');
+                const id = container.dataset.id;
+                const reactionRef = db.ref('reactions/' + id + '/' + emoji);
+                reactionRef.transaction((count) => {
+                    return (count || 0) + 1;
+                });
+                emojisplosion(button);
+                handleButtonClick(button);
+            });
+        });
+
+        document.querySelectorAll('.emoji-reaction, .emoji-count').forEach(element => {
+            element.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+            });
+        });
+
+        loadCounts();
+    </script>
+</body>
+</html>
