@@ -41,6 +41,10 @@ kbd {
     border-color: #007bff;
 }
 
+.form-floating>.form-control {
+    padding-top: 2em!important;
+}
+
 #cparent {
     position: relative;
     width: 0;
