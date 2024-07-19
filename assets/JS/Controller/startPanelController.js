@@ -55,6 +55,7 @@ $(document).ready(function () {
 
     function handleURLFile() {
         const { mode, fileName, selectedIDs } = App.utilities.getURLParams();
+        const samplesFile = fileName ? fileName.split('/').pop() : 'samples.json'; // Extract samples.json from the URL if present
 
         if (!fileName) {
             App.state.appState.fileName = '';
@@ -74,7 +75,17 @@ $(document).ready(function () {
         App.utilities.updatePageTitle(fileName);
 
         const fileLoadPromise = filePath.startsWith('http') ?
-            App.fileHandling.fetchAndParseCSV(filePath, fileName) :
+        fetch(filePath)
+        .then(response => {
+            if (response.headers.get('Content-Type').includes('application/json')) {
+                return response.json().then(data => {
+                    App.fileHandling.populateSampleFilesDropdown(data);
+                });
+            } else {
+                return App.fileHandling.fetchAndParseCSV(filePath, fileName);
+            }
+        })
+    :
             $.getJSON('framework_samples/samples.json').then(sampleFiles => {
                 const sampleFile = sampleFiles.find(file => file.path === filePath);
                 if (sampleFile) {
@@ -265,9 +276,19 @@ $(document).ready(function () {
     });
 
     App.alerts.initializeTooltips();
-    $.getJSON('framework_samples/samples.json', function(data) {
-        App.fileHandling.populateSampleFilesDropdown(data);
-    });
+ 
+    // Check if a samples.json URL is provided in the URL parameters
+    const samplesFileURL = new URLSearchParams(window.location.search).get('file');
+    if (samplesFileURL && samplesFileURL.endsWith('samples.json')) {
+        fetch(samplesFileURL)
+            .then(response => response.json())
+            .then(data => App.fileHandling.populateSampleFilesDropdown(data))
+            .catch(error => console.error('Error fetching custom samples.json:', error));
+    } else {
+        $.getJSON('framework_samples/samples.json', function(data) {
+            App.fileHandling.populateSampleFilesDropdown(data);
+        });
+    }
 
     App.startPanelController = {
         handleURLFile: handleURLFile
