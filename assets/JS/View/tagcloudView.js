@@ -6,7 +6,7 @@ App.tagcloud = (function() {
     const excludeWords = [
         'the', 'and', 'is', 'in', 'to', 'with', 'a', 'for', 'of', 'on', 'it', 'this',
         'that', 'by', 'an', 'be', 'are', 'as', 'at', 'or', 'from', 'was', 'were', 'which',
-        'but', 'not', 'nbsp', 'le', 'la', 'les', 'des', 'de', 'et', 'en', 'dans', 'ce', 'sur', 'aux', 'ou', 'du', 'une', 'un', 'se', 'au', 'pour', 'avec'
+        'but', 'not', 'nbsp', 'eacute', 'le', 'la', 'les', 'des', 'de', 'et', 'en', 'dans', 'ce', 'sur', 'aux', 'ou', 'du', 'une', 'un', 'se', 'au', 'pour', 'avec'
     ];
 
     function extractTopWords(data) {
