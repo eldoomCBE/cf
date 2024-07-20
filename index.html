@@ -20,17 +20,17 @@
         <!-- Left Start Input Sidebar-->
         <div class="bg-dark text-light" id="left-sidebar-wrapper">
             <div class="d-grid gap-2 p-3">
-                <h5>📁 Import a .csv</h5>
-                <div class="input-group input-group-sm mb-3">
-                <input type="file" id="csvFileInput" class="form-control input-group-sm" accept=".csv" />
-                </div>
-                <hr>
                 <h5>🗃️ Select a sample</h5>
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sample Files
                 </button>
                 <ul class="dropdown-menu dropdown-menu-dark" id="sampleFilesDropdown"></ul>
-                <input type="text" id="csvFileName" class="form-control" readonly style="display: none; width: auto;" />
+                <input type="text" id="csvFileName" class="form-control" readonly style="display: none; width: auto;" data-bs-theme="dark" />
+                <hr>
+                <h5>📁 Import a .csv</h5>
+                <div class="input-group input-group-sm mb-3">
+                <input type="file" id="csvFileInput" class="form-control input-group-sm" accept=".csv" data-bs-theme="dark" />
+                </div>
                 <hr>
                 <h5>📋 Direct JSON input</h5>
                 <button class="btn btn-outline-secondary" type="button" id="modalInput">Input</button>
