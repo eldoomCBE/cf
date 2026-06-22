@@ -1,7 +1,7 @@
 // assets/JS/Controller/startPanelController.js
 
 $(document).ready(function () {
-    const PROSPECTRE_BASE_URL = window.ELDOOM_PROSPECTRE_URL || 'http://localhost:8083/index.html';
+    const PROSPECTRE_BASE_URL = 'https://reseau-prospectre.github.io/explorer/';
     const PUBLIC_CF_BASE_URL = 'https://eldoomcbe.github.io/cf/';
 
     function encodePathSegments(path) {

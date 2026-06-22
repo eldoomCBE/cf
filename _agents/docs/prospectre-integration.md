@@ -89,10 +89,8 @@ Ajouter des helpers dans `startPanelController.js` :
 Ajouter une constante configurable :
 
 ```js
-const PROSPECTRE_BASE_URL = 'http://localhost:8083/index.html';
+const PROSPECTRE_BASE_URL = 'https://reseau-prospectre.github.io/explorer/';
 ```
-
-ou, si l'on vise la version publiee plus tard, garder ce point central facile a changer.
 
 Construire l'URL :
 

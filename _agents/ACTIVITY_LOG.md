@@ -4,6 +4,7 @@ Limiter ce fichier aux 20 dernieres entrees utiles. Supprimer les entrees obsole
 
 ## Entrees recentes
 
+- Correction de la cible PROSPECTRE publique : le bouton ouvre maintenant `https://reseau-prospectre.github.io/explorer/`.
 - Ajustement UX du bouton PROSPECTRE : il est desormais invisible et hors focus tant qu'aucune URL CSV exploitable n'est disponible; libelle simplifie en `Voir en graphe` avec apparition animee.
 - Ajout du bouton intelligent `Graphe PROSPECTRE` dans la navbar eldoom : il s'active pour un CSV distant ou un sample public, deduit l'URL CSV GitHub Pages et ouvre PROSPECTRE avec `?source=...`.
 - Correction de l'encodage du parametre hash `file` dans `App.utilities.updateURL()` pour fiabiliser les URLs distantes et les noms de fichiers avec espaces/caracteres speciaux.
