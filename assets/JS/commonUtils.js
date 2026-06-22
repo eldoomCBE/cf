@@ -57,7 +57,7 @@ App.utilities = (function () {
 
     function updateURL(mode, fileName, selectedIDs = []) {
         const modeSuffix = mode ? `mode=${mode}` : '';
-        const fileSuffix = fileName ? `&file=${fileName}` : '';
+        const fileSuffix = fileName ? `&file=${encodeURIComponent(fileName)}` : '';
         const encodedSelectedIDs = encodeParams(selectedIDs, '➕');
         const selectedIDsSuffix = selectedIDs.length ? `&ids=${encodedSelectedIDs}` : '';
 

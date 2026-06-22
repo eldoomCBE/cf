@@ -75,9 +75,248 @@ kbd {
     z-index: 2001;
 }
 
+#navbarSupportedContent {
+    align-items: center;
+}
+
 .navbar-brand {
     font-family: 'SoulPapa', Montserrat, Arial, sans-serif;
     cursor: crosshair;
+}
+
+.prospectre-launcher {
+    --ps-accent: #35c7e8;
+    --ps-accent-2: #8eea9f;
+    --ps-bg: rgba(8, 16, 20, 0.92);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48rem;
+    max-width: 14rem;
+    min-height: 2.35rem;
+    margin-right: 1.5rem;
+    padding: 0.28rem 0.82rem 0.28rem 0.36rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    color: #f8fbff;
+    background:
+        linear-gradient(var(--ps-bg), var(--ps-bg)) padding-box,
+        linear-gradient(135deg, var(--ps-accent), var(--bs-primary), var(--ps-accent-2)) border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 0 rgba(0, 209, 255, 0), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform-origin: right center;
+    transition:
+        max-width 0.34s ease,
+        margin-right 0.34s ease,
+        padding 0.34s ease,
+        border-width 0.34s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        opacity 0.24s ease;
+}
+
+.prospectre-launcher::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(110deg, transparent 8%, rgba(255, 255, 255, 0.28) 22%, transparent 38%);
+    transform: translateX(-120%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+}
+
+.prospectre-launcher__icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 1.65rem;
+    height: 1.65rem;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(142, 234, 159, 0.32), transparent 42%),
+        rgba(53, 199, 232, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(142, 234, 159, 0.34), 0 0 14px rgba(53, 199, 232, 0.24);
+    z-index: 1;
+}
+
+.prospectre-launcher__icon::before,
+.prospectre-launcher__icon::after {
+    content: "";
+    position: absolute;
+    left: 0.48rem;
+    top: 0.78rem;
+    width: 0.72rem;
+    height: 1px;
+    background: rgba(248, 251, 255, 0.54);
+    transform-origin: left center;
+}
+
+.prospectre-launcher__icon::before {
+    transform: rotate(-34deg);
+}
+
+.prospectre-launcher__icon::after {
+    transform: rotate(32deg);
+}
+
+.prospectre-launcher__node {
+    position: absolute;
+    width: 0.36rem;
+    height: 0.36rem;
+    border-radius: 50%;
+    background: #f8fbff;
+    box-shadow: 0 0 8px rgba(142, 234, 159, 0.72);
+}
+
+.prospectre-launcher__node--a {
+    left: 0.34rem;
+    top: 0.66rem;
+}
+
+.prospectre-launcher__node--b {
+    right: 0.34rem;
+    top: 0.36rem;
+    animation: prospectreNodeB 2.2s ease-in-out infinite;
+}
+
+.prospectre-launcher__node--c {
+    right: 0.34rem;
+    bottom: 0.34rem;
+    animation: prospectreNodeC 2.2s ease-in-out infinite;
+}
+
+.prospectre-launcher__text {
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    font-size: 0.92rem;
+}
+
+.prospectre-launcher__spark {
+    position: absolute;
+    right: 0.7rem;
+    top: 0.42rem;
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: var(--ps-accent-2);
+    box-shadow: 0 0 12px var(--ps-accent-2);
+    opacity: 0;
+}
+
+.prospectre-launcher.is-hidden {
+    max-width: 0;
+    min-height: 2.35rem;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0.35rem) scale(0.96);
+}
+
+.prospectre-launcher.is-hidden .prospectre-launcher__icon,
+.prospectre-launcher.is-hidden .prospectre-launcher__text,
+.prospectre-launcher.is-hidden .prospectre-launcher__spark {
+    opacity: 0;
+}
+
+.prospectre-launcher.is-ready {
+    cursor: pointer;
+    border-color: transparent;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    animation: prospectreArrive 0.42s ease-out both, prospectreReadyPulse 3.6s ease-in-out 0.5s infinite;
+}
+
+.prospectre-launcher.is-ready:hover,
+.prospectre-launcher.is-ready:focus-visible {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(0, 209, 255, 0.26), 0 0 0 3px rgba(128, 255, 114, 0.18);
+}
+
+.prospectre-launcher.is-ready:hover::before,
+.prospectre-launcher.is-ready:focus-visible::before {
+    transform: translateX(120%);
+}
+
+.prospectre-launcher.is-ready .prospectre-launcher__spark {
+    animation: prospectreSpark 1.8s ease-in-out infinite;
+}
+
+.prospectre-launcher:disabled {
+    cursor: default;
+}
+
+@keyframes prospectreArrive {
+    0% {
+        opacity: 0;
+        transform: translateX(0.5rem) scale(0.94);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes prospectreReadyPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 rgba(0, 209, 255, 0), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(0, 209, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+}
+
+@keyframes prospectreNodeB {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-0.08rem, 0.05rem);
+    }
+}
+
+@keyframes prospectreNodeC {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-0.07rem, -0.05rem);
+    }
+}
+
+@keyframes prospectreSpark {
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    45%,
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .prospectre-launcher {
+        min-height: 2.35rem;
+        margin-right: 1rem;
+        padding-right: 0.7rem;
+    }
+
+    .prospectre-launcher__text {
+        font-size: 0.84rem;
+    }
 }
 
 /* Remove border from toggler */

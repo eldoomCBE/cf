@@ -143,6 +143,10 @@ App.generator = (function() {
 
             const newFileName = data.find(row => row['Is framework'] === '1')['Short name'];
             App.state.appState.fileName = newFileName;
+            App.state.appState.sourceCsvUrl = '';
+            App.state.appState.sourceCsvPath = '';
+            App.state.appState.sourceCsvKind = 'generator';
+            App.startPanelController?.updateProspectreButtonState?.();
             App.utilities.updateURL('preview', newFileName);
 
             App.utilities.updatePageTitle(newFileName);

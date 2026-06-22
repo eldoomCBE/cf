@@ -13,6 +13,9 @@ App.state = (function() {
         isStatisticsActive: false,
         treeCount: 0,
         fileName: '',
+        sourceCsvUrl: '',
+        sourceCsvPath: '',
+        sourceCsvKind: '',
         selectedIDs: [],
         isEditMode: false,
         idMapping: {}  

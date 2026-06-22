@@ -1,6 +1,104 @@
 // assets/JS/Controller/startPanelController.js
 
 $(document).ready(function () {
+    const PROSPECTRE_BASE_URL = window.ELDOOM_PROSPECTRE_URL || 'http://localhost:8083/index.html';
+    const PUBLIC_CF_BASE_URL = 'https://eldoomcbe.github.io/cf/';
+
+    function encodePathSegments(path) {
+        return String(path || '')
+            .split('/')
+            .map(segment => {
+                try {
+                    return encodeURIComponent(decodeURIComponent(segment));
+                } catch (error) {
+                    return encodeURIComponent(segment);
+                }
+            })
+            .join('/');
+    }
+
+    function toPublicCfUrl(path) {
+        if (!path) return '';
+        if (/^https?:\/\//i.test(path)) return path;
+        return `${PUBLIC_CF_BASE_URL}${encodePathSegments(path.replace(/^\/+/, ''))}`;
+    }
+
+    function isRemoteCsvUrl(value) {
+        try {
+            const url = new URL(value, window.location.href);
+            return /^https?:$/i.test(url.protocol) && /\.csv(?:$|[?#])/i.test(url.href);
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function setCurrentCsvSource(source = {}) {
+        const url = source.url || '';
+        const path = source.path || '';
+        const kind = source.kind || '';
+
+        App.state.appState.sourceCsvUrl = url;
+        App.state.appState.sourceCsvPath = path;
+        App.state.appState.sourceCsvKind = kind;
+        updateProspectreButtonState();
+    }
+
+    function clearCurrentCsvSource(kind = 'unavailable') {
+        setCurrentCsvSource({ kind });
+    }
+
+    function getCurrentCsvRemoteUrl() {
+        const { sourceCsvUrl, sourceCsvPath } = App.state.appState;
+        if (sourceCsvUrl && isRemoteCsvUrl(sourceCsvUrl)) return sourceCsvUrl;
+
+        const publicUrl = toPublicCfUrl(sourceCsvPath);
+        if (publicUrl && isRemoteCsvUrl(publicUrl)) return publicUrl;
+
+        return '';
+    }
+
+    function buildProspectreUrl(csvUrl) {
+        const url = new URL(PROSPECTRE_BASE_URL, window.location.href);
+        url.searchParams.set('source', csvUrl);
+        return url.href;
+    }
+
+    function updateProspectreButtonState() {
+        const button = document.getElementById('openProspectreGraph');
+        if (!button) return;
+
+        const csvUrl = getCurrentCsvRemoteUrl();
+        const isReady = Boolean(csvUrl);
+        button.disabled = !isReady;
+        button.setAttribute('aria-disabled', String(!isReady));
+        button.tabIndex = isReady ? 0 : -1;
+        button.classList.toggle('is-ready', isReady);
+        button.classList.toggle('is-hidden', !isReady);
+
+        const title = isReady
+            ? `Voir ce référentiel en graphe : ${csvUrl}`
+            : '';
+        button.setAttribute('title', title);
+        button.setAttribute('data-bs-original-title', title);
+    }
+
+    function openCurrentCsvInProspectre() {
+        const csvUrl = getCurrentCsvRemoteUrl();
+        if (!csvUrl) {
+            App.alerts.showAlert('PROSPECTRE a besoin d’un CSV disponible en URL publique.', 'warning');
+            updateProspectreButtonState();
+            return;
+        }
+
+        const prospectreUrl = buildProspectreUrl(csvUrl);
+        const opened = window.open(prospectreUrl, '_blank', 'noopener,noreferrer');
+        if (opened) {
+            App.alerts.showAlert('Graphe ouvert dans PROSPECTRE', 'success');
+        } else {
+            App.alerts.showAlert('Le navigateur a bloqué la nouvelle fenêtre PROSPECTRE.', 'warning');
+        }
+    }
+
     function handleFileLoad(fileName, alertMessage = null) {
         App.state.appState.fileName = fileName;
         App.statistics.displayStatistics();
@@ -32,6 +130,7 @@ $(document).ready(function () {
     function handleFileSelect(event) {
         const file = event.target.files ? event.target.files[0] : null;
         if (file) {
+            clearCurrentCsvSource('local-file');
             App.fileHandling.parseCSV(file)
                 .then(() => {
                     handleFileLoad(file.name, `✅ Uploaded file parsed`);
@@ -44,6 +143,11 @@ $(document).ready(function () {
     function handleSampleFileSelect(path, fileName) {
         App.fileHandling.fetchAndParseCSV(path, fileName)
             .then(() => {
+                setCurrentCsvSource({
+                    kind: 'sample',
+                    path: path,
+                    url: toPublicCfUrl(path)
+                });
                 handleFileLoad(fileName);
                 cleanInvalidSelections();
             })
@@ -59,6 +163,7 @@ $(document).ready(function () {
 
         if (!fileName) {
             App.state.appState.fileName = '';
+            clearCurrentCsvSource('empty');
             App.utilities.updateURL('preview', '', []);
             App.utilities.updatePageTitle('');
             return;
@@ -96,6 +201,18 @@ $(document).ready(function () {
             });
 
         fileLoadPromise.then(() => {
+            if (filePath.startsWith('http') && /\.csv(?:$|[?#])/i.test(filePath)) {
+                setCurrentCsvSource({ kind: 'remote', url: filePath });
+            } else if (!filePath.startsWith('http')) {
+                setCurrentCsvSource({
+                    kind: 'sample',
+                    path: filePath,
+                    url: toPublicCfUrl(filePath)
+                });
+            } else {
+                clearCurrentCsvSource('remote-non-csv');
+            }
+
             handleFileLoad(fileName, `✅ Loaded file: ${fileName}`);
             if (selectedIDs && selectedIDs.length > 0) {
                 $('#tree').one('loaded.jstree', function () {
@@ -117,14 +234,17 @@ $(document).ready(function () {
             App.utilities.updateURL(finalMode, fileName, selectedIDs);
 
         }).catch(error => {
+            clearCurrentCsvSource('load-error');
             App.alerts.showAlert(`❌ Error loading file: ${fileName}`, 'danger');
         });
     }
 
     $('#csvFileInput').on('change', handleFileSelect);
+    $('#openProspectreGraph').on('click', openCurrentCsvInProspectre);
 
     $('#sampleFilesDropdown').on('click', '.dropdown-item', function(e) {
         e.preventDefault();
+        e.stopImmediatePropagation();
         const filePath = $(this).data('path');
         const fileName = filePath.split('/').pop();
         const fileMessage = $(this).data('message');
@@ -233,6 +353,7 @@ $(document).ready(function () {
     $('#importButton').on('click', function() {
         const text = $('#inputTextarea').val();
         const data = JSON.parse(text);
+        clearCurrentCsvSource('json-input');
         App.state.appState.temporaryData = data;
         App.state.updateTaxonomyLevels();
 
@@ -291,7 +412,10 @@ $(document).ready(function () {
     }
 
     App.startPanelController = {
-        handleURLFile: handleURLFile
+        handleURLFile: handleURLFile,
+        getCurrentCsvRemoteUrl: getCurrentCsvRemoteUrl,
+        openCurrentCsvInProspectre: openCurrentCsvInProspectre,
+        updateProspectreButtonState: updateProspectreButtonState
     };
 
     handleURLFile();
@@ -315,6 +439,7 @@ $(document).ready(function () {
 
     // Event listeners
     $('#modalGenerator').on('click', function() {
+        clearCurrentCsvSource('generator');
         $('#generatorModal').modal('show');
     });
 
